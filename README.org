@@ -6,6 +6,8 @@ With this you can simply track a metric per day of habits you want to gain or av
 
 This is specifically written to be used a tile for ios using [[https://apps.apple.com/at/app/widget-web/id1522169352][Widget Web]] for a quick overview of your habits.
 
+[[./ios.jpeg]]
+
 * Development
 
 Run the dev server & unit tests using the [[https://book.babashka.org/][Babashka]] task via the [[https://nixos.org/manual/nix/stable/command-ref/nix-shell][nix-shell]].
