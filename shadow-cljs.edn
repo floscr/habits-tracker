@@ -1,0 +1,10 @@
+{:deps true
+ :dev-http {8083 "public"}
+ :builds {:app {:target :browser
+                :modules {:main {:entries [app.core]
+                                 :init-fn app.core/init}}
+                :devtools {:preloads [preload devtools.preload]}}
+          :node-test {:target :node-test
+                      :output-to "out/node-tests.js"
+                      :ns-regexp "-test$"
+                      :autorun :true}}}

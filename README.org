@@ -1,0 +1,26 @@
+#+title: Habits Tracker
+
+A simple habits tracker written in clojure and react using [[https://github.com/pitch-io/uix][uix]].
+
+With this you can simply track a metric per day of habits you want to gain or avoid.
+
+This is specifically written to be used a tile for ios using [[https://apps.apple.com/at/app/widget-web/id1522169352][Widget Web]] for a quick overview of your habits.
+
+* Development
+
+Run the dev server & unit tests using the [[https://book.babashka.org/][Babashka]] task via the [[https://nixos.org/manual/nix/stable/command-ref/nix-shell][nix-shell]].
+
+#+begin_src sh
+nix develop # Start the dev envirnent provided by nix
+npm install # Install dependencies
+bb dev      # Start the dev server
+#+end_src
+
+** Technical notes
+
+- Uses react via [[https://github.com/pitch-io/uix][uix]]
+- CSS rules written via [[https://github.com/clj-commons/cljss][cljss]]
+- Uses custom state management using react context with a reducer and an redux/reframe like action dispatch function
+  See [[file:src/app/main/state/context.cljs][context.cljs]]
+- Data gets persisted to local-storage as stringified ~edn~
+- Time data get's naively handled using [[https://github.com/juxt/tick][tick]]

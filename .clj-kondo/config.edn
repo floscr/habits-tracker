@@ -1,0 +1,4 @@
+{:lint-as {uix.core/defui clojure.core/defn
+           app.utils.macros/defstyled clojure.core/def
+           cljss.core/defstyles clojure.core/defn
+           cljss.core/defkeyframes clojure.core/def}}

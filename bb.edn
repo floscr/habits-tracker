@@ -1,0 +1,10 @@
+{:src ["src"]
+ :tasks
+ {dev {:task (shell "yarn shadow-cljs -A:dev watch app node-test")}
+  release {:task (shell "yarn shadow-cljs -A:dev release app")}
+  upload {:task (shell {:dir "./scripts"} "bb ./src/deploy.clj")}
+  deploy {:task (do (shell "bb release")
+                    (shell "bb upload"))}
+  open-ports {:task (do (shell "sudo iptables -A INPUT -p tcp --dport 8083 -j ACCEPT")
+                        (shell "sudo iptables -A INPUT -p tcp --dport 9630 -j ACCEPT")
+                        (shell "systemctl reload firewall.service"))}}}
